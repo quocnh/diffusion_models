@@ -31,5 +31,6 @@ sudo apt install libnvidia-gl-470
 sudo apt install nvidia-driver-470
 
 https://pytorch.org/get-started/locally/
+conda install -c conda-forge pytorch-gpu
 
 
