@@ -1,5 +1,6 @@
 # diffusion_models
 
+```python
 # setup cuda & pytorch
 # 1. Removing existing CUDA
 sudo apt --purge remove "cublas*" "cuda*"
@@ -33,4 +34,4 @@ sudo apt install nvidia-driver-470
 https://pytorch.org/get-started/locally/
 conda install -c conda-forge pytorch-gpu
 
-
+```
