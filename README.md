@@ -1,7 +1,7 @@
 # diffusion_models
 
+### setup cuda & pytorch
 ```python
-# setup cuda & pytorch
 # 1. Removing existing CUDA
 sudo apt --purge remove "cublas*" "cuda*"
 sudo apt --purge remove "nvidia*"
@@ -35,3 +35,4 @@ https://pytorch.org/get-started/locally/
 conda install -c conda-forge pytorch-gpu
 
 ```
+### 
