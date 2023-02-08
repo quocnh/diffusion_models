@@ -1,6 +1,6 @@
-# diffusion_models
+# Diffusion_models
 
-### setup cuda & pytorch
+### 1. setup cuda & pytorch
 ```python
 # 1. Removing existing CUDA
 sudo apt --purge remove "cublas*" "cuda*"
