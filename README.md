@@ -1,4 +1,5 @@
 # Diffusion_models
+```python
 ### 0. Remove CUDA and Nvidia toolkits if any in the system
 There are two things- nvidia drivers and cuda toolkit- which you may want to remove. If you have installed using apt-get use the following to remove the packages completely from the system:
 
@@ -13,9 +14,9 @@ If you have installed via source files (assuming the default location to be /usr
 sudo rm -rf /usr/local/cuda*
 From cuda 11.4 onwards, an uninstaller script has been provided. Use it for the uninstallation instead:
 
-# To uninstall cuda
+#### To uninstall cuda
 sudo /usr/local/cuda-11.4/bin/cuda-uninstaller 
-# To uninstall nvidia
+#### To uninstall nvidia
 sudo /usr/bin/nvidia-uninstall
 If you get the problem of broken packages, it has happened since you added repo to the apt/sources.lst. Run the following to delete it:
 
@@ -27,8 +28,9 @@ Then run
 
 sudo apt-get update 
 This will fix the problem.
-### 1. setup cuda & pytorch
-```python
+
+Check this alternative one:
+
 # 1. Removing existing CUDA
 sudo apt --purge remove "cublas*" "cuda*"
 sudo apt --purge remove "nvidia*"
@@ -44,6 +46,9 @@ sudo rm /etc/apt/sources.list.d/cuda*
 # system update
 sudo apt-get update
 sudo apt-get upgrade
+
+#-------------------------
+
 
 # Check GPU card to see which cuda version is compatable.
 sudo apt-get install nvidia-driver-470
