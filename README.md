@@ -70,8 +70,6 @@ This command will list all packages containing the string "nvidia". You can then
 csharp
 Copy code
 sudo apt-get remove --purge <package-name>
-```
-
 
 
 3. Fom Lambda stack
@@ -91,4 +89,9 @@ sudo apt-get --yes upgrade && \
 sudo apt-get install --yes --no-install-recommends lambda-server && \
 sudo apt-get install --yes --no-install-recommends nvidia-headless-470 && \
 sudo apt-get install --yes --no-install-recommends lambda-stack-cuda
+```
+
+
+
+
 ### 
