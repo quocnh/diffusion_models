@@ -18,21 +18,24 @@ sudo rm /etc/apt/sources.list.d/cuda*
 sudo apt-get update
 sudo apt-get upgrade
 
-# install other import packages
-sudo apt-get install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
+# Check GPU card to see which cuda version is compatable.
+sudo apt-get install nvidia-driver-470
 
-# first get the PPA repository driver
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt update
+wget https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda_11.1.1_455.32.00_linux.run
+chmod +x cuda_11.1.1_455.32.00_linux.run
+sudo ./cuda_11.1.1_455.32.00_linux.run
 
+If you are unable to locate the NVIDIA driver packages with the command sudo apt-get remove --purge nvidia-*, it is possible that the drivers were installed using a different package manager or method.
 
-# install nvidia driver with dependencies
-sudo apt install libnvidia-common-470
-sudo apt install libnvidia-gl-470
-sudo apt install nvidia-driver-470
+You can try to search for the installed NVIDIA driver packages using the following command:
 
-https://pytorch.org/get-started/locally/
-conda install -c conda-forge pytorch-gpu
+perl
+Copy code
+dpkg -l | grep nvidia
+This command will list all packages containing the string "nvidia". You can then use the following command to remove all NVIDIA-related packages:
 
+csharp
+Copy code
+sudo apt-get remove --purge <package-name>
 ```
 ### 
