@@ -49,6 +49,7 @@ sudo apt-get upgrade
 
 #-------------------------
 
+1. Install Cuda and Nvidia driver
 
 # Check GPU card to see which cuda version is compatable.
 sudo apt-get install nvidia-driver-470
