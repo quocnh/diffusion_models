@@ -71,4 +71,24 @@ csharp
 Copy code
 sudo apt-get remove --purge <package-name>
 ```
+
+
+
+3. Fom Lambda stack
+
+#What will be installed
+TensorFlow v2.5.0
+PyTorch v1.9.0
+CUDA v11.1
+cuDNN v8.2.1
+Dependencies and other frameworks like Caffe and Theano
+
+LAMBDA_REPO=$(mktemp) && \
+wget -O${LAMBDA_REPO} https://lambdalabs.com/static/misc/lambda-stack-repo.deb && \
+sudo dpkg -i ${LAMBDA_REPO} && rm -f ${LAMBDA_REPO} && \
+sudo apt-get update && \
+sudo apt-get --yes upgrade && \
+sudo apt-get install --yes --no-install-recommends lambda-server && \
+sudo apt-get install --yes --no-install-recommends nvidia-headless-470 && \
+sudo apt-get install --yes --no-install-recommends lambda-stack-cuda
 ### 
