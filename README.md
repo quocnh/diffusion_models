@@ -29,66 +29,10 @@ Then run
 sudo apt-get update 
 This will fix the problem.
 
-Check this alternative one:
+### 1. Install Lambda stack
+wget -nv -O- https://lambdalabs.com/install-lambda-stack.sh | I_AGREE_TO_THE_CUDNN_LICENSE=1 sh -
+sudo reboot
 
-# 1. Removing existing CUDA
-sudo apt --purge remove "cublas*" "cuda*"
-sudo apt --purge remove "nvidia*"
-rm -rf /usr/local/cuda*
-sudo apt-get autoremove && sudo apt-get autoclean
-sudo apt-get purge nvidia*
-sudo apt remove nvidia-*
-sudo rm /etc/apt/sources.list.d/cuda*
-
-# Now you need to reboot
-# reboot
-
-# system update
-sudo apt-get update
-sudo apt-get upgrade
-
-#-------------------------
-
-1. Install Cuda and Nvidia driver
-
-# Check GPU card to see which cuda version is compatable.
-sudo apt-get install nvidia-driver-470
-
-wget https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda_11.1.1_455.32.00_linux.run
-chmod +x cuda_11.1.1_455.32.00_linux.run
-sudo ./cuda_11.1.1_455.32.00_linux.run
-
-If you are unable to locate the NVIDIA driver packages with the command sudo apt-get remove --purge nvidia-*, it is possible that the drivers were installed using a different package manager or method.
-
-You can try to search for the installed NVIDIA driver packages using the following command:
-
-perl
-Copy code
-dpkg -l | grep nvidia
-This command will list all packages containing the string "nvidia". You can then use the following command to remove all NVIDIA-related packages:
-
-csharp
-Copy code
-sudo apt-get remove --purge <package-name>
-
-
-3. Fom Lambda stack
-
-#What will be installed
-TensorFlow v2.5.0
-PyTorch v1.9.0
-CUDA v11.1
-cuDNN v8.2.1
-Dependencies and other frameworks like Caffe and Theano
-
-LAMBDA_REPO=$(mktemp) && \
-wget -O${LAMBDA_REPO} https://lambdalabs.com/static/misc/lambda-stack-repo.deb && \
-sudo dpkg -i ${LAMBDA_REPO} && rm -f ${LAMBDA_REPO} && \
-sudo apt-get update && \
-sudo apt-get --yes upgrade && \
-sudo apt-get install --yes --no-install-recommends lambda-server && \
-sudo apt-get install --yes --no-install-recommends nvidia-headless-470 && \
-sudo apt-get install --yes --no-install-recommends lambda-stack-cuda
 ```
 
 
